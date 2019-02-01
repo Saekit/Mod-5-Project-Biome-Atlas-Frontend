@@ -7,7 +7,8 @@ class NavBar extends React.Component {
       <div>
         <ul>
           <Link to={'/'}><li>Home</li></Link>
-          <Link to={'/biome'}><li>Biomes</li></Link>
+          <Link to={'/animals'}><li>All Animals</li></Link>
+          <Link to={'/plants'}><li>All Plants</li></Link>
         </ul>
       </div>
     )

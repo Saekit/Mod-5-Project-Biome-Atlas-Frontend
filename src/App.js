@@ -3,6 +3,8 @@ import './App.css';
 import {Route, Switch, withRouter} from 'react-router-dom'
 import NavBar from './components/NavBar';
 import Carousel from './components/Carousel';
+import AnimalContainer from './containers/AnimalContainer'
+import PlantContainer from './containers/PlantContainer'
 import BiomeContainer from './containers/BiomeContainer'
 
 class App extends Component {
@@ -13,13 +15,17 @@ class App extends Component {
         <Carousel />
         <Switch>
           <Route
-            path="/biome"
+            path="/animals"
+            component={AnimalContainer}
+            />
+          <Route
+            path="/plants"
+            component={PlantContainer}
+            />
+          <Route
+            path="/"
             component={BiomeContainer}
             />
-            <Route
-              path="/"
-              render={()=><h1>Home</h1>}
-              />
         </Switch>
       </div>
     );
