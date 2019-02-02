@@ -1,4 +1,5 @@
 export const LOAD_PLANTS = 'LOAD_PLANTS'
+export const CHANGE_PLANT = 'CHANGE_PLANT'
 
 export const getPlants = () => {
   return (dispatch) => {
@@ -11,5 +12,11 @@ export const getPlants = () => {
         })
       })
       .catch(console.error)
+  }
+}
+export const changePlant = (plant) => {
+  return {
+    type: CHANGE_PLANT,
+    payload: plant
   }
 }

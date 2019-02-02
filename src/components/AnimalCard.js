@@ -1,25 +1,21 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {changeAnimal} from '../actions/animalActions'
 
 
 class AnimalCard extends React.Component {
-//   biome_id: 7
-// endangered: true
-// id: 31
-// image: null
 
+  handleClick = () => {
+    this.props.changeAnimal(this.props.animal)
+  }
 
   render(){
     let animal = this.props.animal
     return(
       <div>
       <ul>
-        <li>Species: {animal.species}</li>
-        <li>Size: {animal.size}</li>
-        <li>Lifespan: {animal.lifespan}</li>
-        <li>Location: {animal.location}</li>
-        <li>Prey: {animal.prey}</li>
-        <li>Predators: {animal.predators}</li>
-        <li>Interesting Fact: {animal.other_info}</li>
+        <Link to="/animalinfo"><li onClick={this.handleClick}>Species: {animal.species}</li></Link>
       </ul>
       <hr />
       </div>
@@ -28,4 +24,4 @@ class AnimalCard extends React.Component {
 }
 
 
-export default AnimalCard;
+export default connect(null, {changeAnimal})(AnimalCard);

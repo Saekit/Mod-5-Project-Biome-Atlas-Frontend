@@ -26,6 +26,7 @@ class BiomeCard extends React.Component {
     return(
       <div>
         <ul>
+          <img src={biome.image} alt="" />
           <li>Biome: {biome.biome_name}</li>
           <li>Ecosystems: {biome.ecosystems}</li>
           <li>Temperature Range: {biome.temp_range}</li>

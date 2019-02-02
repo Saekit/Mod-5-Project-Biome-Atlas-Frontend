@@ -7,6 +7,8 @@ import AnimalContainer from './containers/AnimalContainer'
 import PlantContainer from './containers/PlantContainer'
 import HomeContainer from './containers/HomeContainer'
 import BiomeContainer from './containers/BiomeContainer'
+import AnimalInfoContainer from './containers/AnimalInfoContainer'
+import PlantInfoContainer from './containers/PlantInfoContainer'
 import {bindActionCreators} from 'redux'
 import {getPlants} from './actions/plantActions'
 import {getAnimals} from './actions/animalActions'
@@ -35,6 +37,14 @@ class App extends Component {
           <Route
             path="/biome"
             component={BiomeContainer}
+            />
+          <Route
+            path="/animalinfo"
+            component={AnimalInfoContainer}
+            />
+          <Route
+            path="/plantinfo"
+            component={PlantInfoContainer}
             />
           <Route
             path="/"

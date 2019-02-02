@@ -15,8 +15,8 @@ class Carousel extends React.Component {
     return(
       <div>
         <ul>
+          <Link to="/biome"><img onClick={this.handleClick} src={biome.image} alt="" /></Link>
           <li>{biome.biome_name}</li>
-          <Link to="/biome"><button onClick={this.handleClick}>See More</button></Link>
         </ul>
       <hr />
       </div>
