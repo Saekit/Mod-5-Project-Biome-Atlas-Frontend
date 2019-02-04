@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {changeAnimal} from '../actions/animalActions'
+import { Item } from 'semantic-ui-react'
 
 
 class AnimalCard extends React.Component {
@@ -13,12 +14,18 @@ class AnimalCard extends React.Component {
   render(){
     let animal = this.props.animal
     return(
-      <div>
-      <ul>
-        <Link to="/animalinfo"><li onClick={this.handleClick}>Species: {animal.species}</li></Link>
-      </ul>
-      <hr />
-      </div>
+      <Item.Group>
+        <Item>
+          <Item.Image size='tiny' src={animal.image} />
+          <Item.Content verticalAlign='middle'>
+            <Item.Header as='a'>
+              <Link to="/animalinfo">
+                <p onClick={this.handleClick}>{animal.species}</p>
+              </Link>
+            </Item.Header>
+          </Item.Content>
+        </Item>
+      </Item.Group>
     )
   }
 }

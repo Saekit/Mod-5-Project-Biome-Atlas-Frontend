@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {changePlant} from '../actions/plantActions'
+import { Item } from 'semantic-ui-react'
 
 class PlantCard extends React.Component {
 
@@ -12,12 +13,18 @@ class PlantCard extends React.Component {
   render(){
     let plant = this.props.plant
     return(
-      <div>
-      <ul>
-          <Link to="/plantinfo"><li onClick={this.handleClick}>Species: {plant.species}</li></Link>
-      </ul>
-      <hr />
-      </div>
+      <Item.Group>
+        <Item>
+          <Item.Image size='tiny' src={plant.image} />
+          <Item.Content verticalAlign='middle'>
+            <Item.Header as='a'>
+              <Link to="/plantinfo">
+                <p onClick={this.handleClick}>Species: {plant.species}</p>
+              </Link>
+            </Item.Header>
+          </Item.Content>
+        </Item>
+      </Item.Group>
     )
   }
 }
