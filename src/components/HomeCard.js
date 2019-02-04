@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux'
 import {displayBiome} from '../actions/biomeActions'
 import {Link} from 'react-router-dom'
+import {Header} from 'semantic-ui-react'
 
 
 class HomeCard extends React.Component {
@@ -25,7 +26,7 @@ class HomeCard extends React.Component {
           onClick={this.handleClick}
           className="slide"
           style={styles}>
-            <p>{biome.biome_name}</p>
+          <Header as='h2' textAlign='center'>{biome.biome_name}</Header>
         </div>
       </Link>
     )

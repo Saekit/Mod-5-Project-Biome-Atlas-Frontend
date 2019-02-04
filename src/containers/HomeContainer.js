@@ -5,6 +5,7 @@ import {getBiomes} from '../actions/biomeActions'
 import HomeCard from '../components/HomeCard';
 import RightArrow from '../components/RightArrow'
 import LeftArrow from '../components/LeftArrow'
+import { Container, Header } from 'semantic-ui-react'
 
 class HomeContainer extends React.Component {
 
@@ -49,6 +50,8 @@ class HomeContainer extends React.Component {
   render(){
 
     return(
+      <Container fluid>
+        <Header as='h2' textAlign='center'>Welcome to Biome Atlas</Header>
       <div className="slider">
 
         <div className="slider-wrapper"
@@ -71,6 +74,7 @@ class HomeContainer extends React.Component {
          goToNextSlide={this.goToNextSlide}
         />
       </div>
+      </Container>
     )
   }
 }
