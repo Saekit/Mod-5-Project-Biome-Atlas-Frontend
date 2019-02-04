@@ -1,5 +1,6 @@
 export const LOAD_ANIMALS = 'LOAD_ANIMALS'
 export const CHANGE_ANIMAL = 'CHANGE_ANIMAL'
+export const ADD_ANIMAL = 'ADD_ANIMAL'
 
 export const getAnimals = () => {
   return (dispatch) => {
@@ -18,5 +19,11 @@ export const changeAnimal = (animal) => {
   return {
     type: CHANGE_ANIMAL,
     payload: animal
+  }
+}
+export const addAnimal = (animal) => {
+  return {
+    type: ADD_ANIMAL,
+    payload: animal 
   }
 }

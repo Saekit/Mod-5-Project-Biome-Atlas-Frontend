@@ -9,6 +9,7 @@ import HomeContainer from './containers/HomeContainer'
 import BiomeContainer from './containers/BiomeContainer'
 import AnimalInfoContainer from './containers/AnimalInfoContainer'
 import PlantInfoContainer from './containers/PlantInfoContainer'
+import FormContainer from './containers/FormContainer'
 import {bindActionCreators} from 'redux'
 import {getPlants} from './actions/plantActions'
 import {getAnimals} from './actions/animalActions'
@@ -45,6 +46,10 @@ class App extends Component {
           <Route
             path="/plantinfo"
             component={PlantInfoContainer}
+            />
+          <Route
+            path="/form"
+            component={FormContainer}
             />
           <Route
             path="/"
