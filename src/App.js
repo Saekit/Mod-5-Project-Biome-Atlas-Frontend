@@ -17,23 +17,36 @@ import {getAnimals} from './actions/animalActions'
 
 class App extends Component {
 
+  state = {
+    filteredList: [],
+    search: ""
+  }
+
   componentDidMount(){
     this.props.getPlants()
     this.props.getAnimals()
   }
 
+
+    changeHandler = (e, search) => {
+      this.setState({
+        search: e.target.value
+      })
+    }
+
   render() {
+    console.log(this.state.search);
     return (
       <div className="App">
-        <NavBar />
+        <NavBar animals={this.props.animals} plants={this.props.plants} changeHandler={this.changeHandler} search={this.state.search}/>
         <Switch>
           <Route
             path="/animals"
-            render={() => <AnimalContainer animals={this.props.animals}/>}
+            render={() => <AnimalContainer animals={this.props.animals} search={this.state.search}/>}
             />
           <Route
             path="/plants"
-            render={() => <PlantContainer plants={this.props.plants}/>}
+            render={() => <PlantContainer plants={this.props.plants} search={this.state.search}/>}
             />
           <Route
             path="/biome"

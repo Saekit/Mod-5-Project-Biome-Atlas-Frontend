@@ -19,7 +19,7 @@ class PlantCard extends React.Component {
           <Item.Content verticalAlign='middle'>
             <Item.Header as='a'>
               <Link to="/plantinfo">
-                <p onClick={this.handleClick}>Species: {plant.species}</p>
+                <p onClick={this.handleClick}>{plant.species}</p>
               </Link>
             </Item.Header>
           </Item.Content>

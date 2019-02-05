@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom'
 import { Input, Menu } from 'semantic-ui-react'
 
 class NavBar extends React.Component {
-  state = { activeItem: 'home' }
+  state = {
+    activeItem: 'home',
+  }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
@@ -34,7 +36,7 @@ class NavBar extends React.Component {
         /></Link>
         <Menu.Menu position='right'>
           <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
+            <Input icon='search' placeholder='Search...' name="search" value={this.props.search} onChange={this.props.changeHandler}/>
           </Menu.Item>
         </Menu.Menu>
       </Menu>
