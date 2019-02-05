@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import { Button, Form} from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { addPlant } from '../actions/plantActions'
 
 const options = [
-  { key: 'a', text: 'Aquatic', value: 'Aquatic' },
-  { key: 'tu', text: 'Tundra', value: 'Tundra' },
-  { key: 'dt', text: 'Desert', value: 'Desert' },
-  { key: 'r', text: 'Rainforest', value: 'Rainforest' },
-  { key: 'g', text: 'Grasslands', value: 'Grasslands' },
-  { key: 'ta', text: 'Taiga', value: 'Taiga' },
-  { key: 'de', text: 'Deciduous Forest', value: 'Deciduous Forest' }
+  { key: 'a', text: 'Aquatic', value: 1 },
+  { key: 'tu', text: 'Tundra', value: 2 },
+  { key: 'dt', text: 'Desert', value: 3 },
+  { key: 'r', text: 'Rainforest', value: 4 },
+  { key: 'g', text: 'Grasslands', value: 5 },
+  { key: 'ta', text: 'Taiga', value: 6 },
+  { key: 'de', text: 'Deciduous Forest', value: 7 }
 ]
 
 class AddPlantForm extends Component {
@@ -30,14 +32,37 @@ class AddPlantForm extends Component {
     })
   }
 
+  biomeChangeHandler = (e, data) => {
+    this.setState({
+      biome_id: data.value
+    })
+  }
+
+  submitHandler = (e) => {
+    e.preventDefault()
+    let newPlant = this.state
+    this.props.addPlant(newPlant)
+
+    this.setState({
+      species: "",
+      size: "",
+      predators: "",
+      location: "",
+      seed_distribution: "",
+      other_info: "",
+      image: "",
+      biome_id: ""
+    })
+  }
+
   render(){
     return(
 
-      <Form className="plant-form" onSubmit={""} >
+      <Form className="plant-form" onSubmit={this.submitHandler} >
         <h1>Add Plant</h1>
 
         <Form.Field>
-          <Form.Select name="biome_id" fluid label='Biome' options={options} placeholder='Biome' onChange={this.changeHandler} />
+          <Form.Select name="biome_id" fluid label='Biome' options={options} placeholder='Biome' onChange={(e, data) => this.biomeChangeHandler(e, data)} />
         </Form.Field>
 
         <Form.Field>
@@ -81,4 +106,4 @@ class AddPlantForm extends Component {
     )
   }
 }
-export default AddPlantForm;
+export default connect(null, {addPlant})(AddPlantForm);

@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { addAnimal } from '../actions/animalActions'
 
-
+const options = [
+  { key: 'a', text: 'Aquatic', value: 1 },
+  { key: 'tu', text: 'Tundra', value: 2 },
+  { key: 'dt', text: 'Desert', value: 3 },
+  { key: 'r', text: 'Rainforest', value: 4 },
+  { key: 'g', text: 'Grasslands', value: 5 },
+  { key: 'ta', text: 'Taiga', value: 6 },
+  { key: 'de', text: 'Deciduous Forest', value: 7 }
+]
 
 class AddAnimalForm extends Component {
 
@@ -24,32 +34,43 @@ class AddAnimalForm extends Component {
     })
   }
 
+  biomeChangeHandler = (e, data) => {
+    this.setState({
+      biome_id: data.value
+    })
+  }
+
   submitHandler = (e) => {
     e.preventDefault()
-    console.log(this.state)
+    let newAnimal = this.state
+    this.props.addAnimal(newAnimal)
+
+    this.setState({
+      species: "",
+      lifespan: "",
+      size: "",
+      prey: "",
+      predators: "",
+      location: "",
+      other_info: "",
+      image: "",
+      endangered: false,
+      biome_id: ""
+    })
   }
 
   render(){
-    const options = [
-      { key: 'a', text: 'Aquatic', value: {this.state.biome_id} },
-      { key: 'tu', text: 'Tundra', value: {this.state.biome_id} },
-      { key: 'dt', text: 'Desert', value: {this.state.biome_id} },
-      { key: 'r', text: 'Rainforest', value: {this.state.biome_id} },
-      { key: 'g', text: 'Grasslands', value: {this.state.biome_id} },
-      { key: 'ta', text: 'Taiga', value: {this.state.biome_id} },
-      { key: 'de', text: 'Deciduous Forest', value: {this.state.biome_id} }
-    ]
     return(
       <Form className="animal-form" onSubmit={this.submitHandler} >
         <h1>Add Animal Form</h1>
 
         <Form.Field>
-          <Form.Select fluid name="biome_id" label='Biome' options={options} placeholder='Biome' onChange={this.changeHandler} />
+          <Form.Select fluid name="biome_id" label='Biome' options={options} value={this.state.value} placeholder='Biome' onChange={(e, data) => this.biomeChangeHandler(e, data)} />
         </Form.Field>
 
         <Form.Field>
           <label>Species</label>
-          <input type="text" name="species" placeholder="species" value={this.state.species} onChange={this.changeHandler} />
+          <input type="text" name="species" placeholder="species" value={this.state.species} onChange={this.changeHandler} error />
         </Form.Field>
 
         <Form.Field>
@@ -84,8 +105,8 @@ class AddAnimalForm extends Component {
 
         <Form.Field>
           <label>Endangered</label>
-          True: <input type="radio" name="endangered" value={this.state.endangered} checked={this.state.endangered === true} onChange={this.changeHandler} /> |
-          False: <input type="radio" name="endangered" value={this.state.endangered} checked={this.state.endangered === false} onChange={this.changeHandler} />
+          True: <input type="radio" name="endangered" value={true} onChange={this.changeHandler} /> |
+          False: <input type="radio" name="endangered" value={false} onChange={this.changeHandler} />
         </Form.Field>
 
         <Form.Field>
@@ -99,4 +120,4 @@ class AddAnimalForm extends Component {
     )
   }
 }
-export default AddAnimalForm;
+export default connect(null, {addAnimal})(AddAnimalForm);
