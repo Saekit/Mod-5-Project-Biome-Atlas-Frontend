@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimalContainer from '../containers/AnimalContainer'
 import PlantContainer from '../containers/PlantContainer'
-import { Accordion, Icon, Segment, Image } from 'semantic-ui-react'
+import { Accordion, Icon, Segment, Image, Button } from 'semantic-ui-react'
 
 
 class BiomeCard extends React.Component {
@@ -81,10 +81,13 @@ class BiomeCard extends React.Component {
           </p>
         </Accordion.Content>
       </Accordion>
-      <button onClick={this.animalHandler}>Animals</button>
-      <button onClick={this.plantHandler}>Plants</button>
-      {this.state.animal ? <AnimalContainer animals={this.props.animals} /> : null}
-      {this.state.plant ? <PlantContainer plants={this.props.plants} /> : null}
+      <Button.Group>
+        <Button onClick={this.animalHandler} content='Animals in this Biome' />
+        <Button.Or />
+        <Button onClick={this.plantHandler} content='Plants in this Biome' />
+      </Button.Group>
+      {this.state.animal ? <AnimalContainer animals={this.props.animals} search={this.props.search} /> : null}
+      {this.state.plant ? <PlantContainer plants={this.props.plants} search={this.props.search}/> : null}
       </Segment>
     )
   }

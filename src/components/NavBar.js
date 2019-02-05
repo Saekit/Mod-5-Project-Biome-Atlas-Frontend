@@ -34,11 +34,12 @@ class NavBar extends React.Component {
           active={activeItem === 'form'}
           onClick={this.handleItemClick}
         /></Link>
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <Input icon='search' placeholder='Search...' name="search" value={this.props.search} onChange={this.props.changeHandler}/>
-          </Menu.Item>
-        </Menu.Menu>
+        {window.location.href === 'http://localhost:3000/' || window.location.href === 'http://localhost:3000/form' ? (null):(
+          <Menu.Menu position='right'>
+            <Menu.Item>
+              <Input icon='search' placeholder='Search...' name="search" value={this.props.search} onChange={this.props.changeHandler}/>
+            </Menu.Item>
+          </Menu.Menu>)}
       </Menu>
       </div>
     )

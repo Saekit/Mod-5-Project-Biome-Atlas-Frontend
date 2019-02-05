@@ -8,7 +8,7 @@ class BiomeContainer extends React.Component {
     let {chosenBiome, animals, plants} = this.props
     return(
       <div>
-        <BiomeCard biome={chosenBiome} animals={animals} plants={plants}/>
+        <BiomeCard biome={chosenBiome} animals={animals} plants={plants} search={this.props.search}/>
       </div>
     )
   }

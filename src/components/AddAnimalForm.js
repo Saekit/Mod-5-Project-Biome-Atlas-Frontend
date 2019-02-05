@@ -62,7 +62,7 @@ class AddAnimalForm extends Component {
   render(){
     return(
       <Form className="animal-form" onSubmit={this.submitHandler} >
-        <h1>Add Animal Form</h1>
+        <h1>Add Animal</h1>
 
         <Form.Field>
           <Form.Select fluid name="biome_id" label='Biome' options={options} value={this.state.value} placeholder='Biome' onChange={(e, data) => this.biomeChangeHandler(e, data)} />

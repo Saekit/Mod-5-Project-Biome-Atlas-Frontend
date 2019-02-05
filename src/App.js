@@ -45,12 +45,12 @@ class App extends Component {
             render={() => <AnimalContainer animals={this.props.animals} search={this.state.search}/>}
             />
           <Route
-            path="/plants"
+            path="/plants" 
             render={() => <PlantContainer plants={this.props.plants} search={this.state.search}/>}
             />
           <Route
             path="/biome"
-            component={BiomeContainer}
+            render={() => <BiomeContainer search={this.state.search}/>}
             />
           <Route
             path="/animalinfo"
@@ -66,7 +66,7 @@ class App extends Component {
             />
           <Route
             path="/"
-            component={HomeContainer}
+            render={() => <HomeContainer/>}
             />
         </Switch>
       </div>
