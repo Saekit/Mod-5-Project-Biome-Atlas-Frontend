@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import { Input, Menu, Segment } from 'semantic-ui-react'
+import { Input, Menu } from 'semantic-ui-react'
 
 class NavBar extends React.Component {
   state = { activeItem: 'home' }
@@ -18,13 +18,18 @@ class NavBar extends React.Component {
           onClick={this.handleItemClick}
           /></Link>
         <Link to={'/animals'}><Menu.Item
-          name='animals'
+          name='Animals'
           active={activeItem === 'animals'}
           onClick={this.handleItemClick}
         /></Link>
         <Link to={'/plants'}><Menu.Item
-          name='plants'
+          name='Plants'
           active={activeItem === 'plants'}
+          onClick={this.handleItemClick}
+        /></Link>
+        <Link to={'/form'}><Menu.Item
+          name='Add Animal or Plant'
+          active={activeItem === 'form'}
           onClick={this.handleItemClick}
         /></Link>
         <Menu.Menu position='right'>

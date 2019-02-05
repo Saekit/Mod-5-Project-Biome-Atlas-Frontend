@@ -82,3 +82,11 @@
 .fa-arrow-right:before, .fa-arrow-left:before {
   color: #222
 }
+.animal-form {
+  float: left;
+  width: 47%;
+}
+.plant-form {
+  float: right;
+  width: 47%;
+}
