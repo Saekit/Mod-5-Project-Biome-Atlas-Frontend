@@ -42,6 +42,7 @@ class AddPlantForm extends Component {
     e.preventDefault()
     let newPlant = this.state
     this.props.addPlant(newPlant)
+    alert(`${this.state.species} was created!`)
 
     this.setState({
       species: "",

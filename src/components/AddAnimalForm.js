@@ -44,6 +44,7 @@ class AddAnimalForm extends Component {
     e.preventDefault()
     let newAnimal = this.state
     this.props.addAnimal(newAnimal)
+    alert(`${this.state.species} was created!`)
 
     this.setState({
       species: "",
