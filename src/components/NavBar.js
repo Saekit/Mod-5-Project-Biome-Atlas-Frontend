@@ -20,18 +20,18 @@ class NavBar extends React.Component {
           onClick={this.handleItemClick}
           /></Link>
         <Link to={'/animals'}><Menu.Item
-          name='Animals'
+          name='animals'
           active={activeItem === 'animals'}
           onClick={this.handleItemClick}
         /></Link>
         <Link to={'/plants'}><Menu.Item
           name='Plants'
-          active={activeItem === 'plants'}
+          active={activeItem === 'Plants'}
           onClick={this.handleItemClick}
         /></Link>
         <Link to={'/form'}><Menu.Item
           name='Add Animal or Plant'
-          active={activeItem === 'form'}
+          active={activeItem === 'Add Animal or Plant'}
           onClick={this.handleItemClick}
         /></Link>
         {window.location.href === 'http://localhost:3000/' || window.location.href === 'http://localhost:3000/form' ? (null):(

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AddAnimalForm from '../components/AddAnimalForm'
 import AddPlantForm from '../components/AddPlantForm'
-import { Divider, Grid, Image, Segment } from 'semantic-ui-react'
+import { Divider, Grid, Segment } from 'semantic-ui-react'
 
 class FormContainer extends Component {
   render(){

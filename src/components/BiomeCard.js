@@ -7,7 +7,8 @@ import { Accordion, Icon, Segment, Image, Button } from 'semantic-ui-react'
 class BiomeCard extends React.Component {
   state = {
     activeIndex: 0,
-    animal: false
+    animal: false,
+    plant: false
   }
 
     handleClick = (e, titleProps) => {

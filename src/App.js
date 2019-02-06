@@ -35,7 +35,6 @@ class App extends Component {
     }
 
   render() {
-    console.log(this.state.search);
     return (
       <div className="App">
         <NavBar animals={this.props.animals} plants={this.props.plants} changeHandler={this.changeHandler} search={this.state.search}/>
@@ -45,7 +44,7 @@ class App extends Component {
             render={() => <AnimalContainer animals={this.props.animals} search={this.state.search}/>}
             />
           <Route
-            path="/plants" 
+            path="/plants"
             render={() => <PlantContainer plants={this.props.plants} search={this.state.search}/>}
             />
           <Route
