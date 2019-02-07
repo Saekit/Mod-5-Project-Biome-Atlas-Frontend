@@ -1,6 +1,7 @@
 import {LOAD_ANIMALS, CHANGE_ANIMAL, ADD_ANIMAL} from '../actions/animalActions'
 import {LOAD_PLANTS, CHANGE_PLANT, ADD_PLANT} from '../actions/plantActions'
 import {LOAD_BIOMES, CHANGE_BIOME} from '../actions/biomeActions'
+import {LOAD_QANDA} from '../actions/quizActions'
 
 const initialState = {
   animals: [],
@@ -8,7 +9,8 @@ const initialState = {
   biomes: [],
   chosenBiome: {},
   chosenAnimal: {},
-  chosenPlant: {}
+  chosenPlant: {},
+  questionsAnswers: []
 }
 const reducer = (state = initialState, action) => {
   switch(action.type){
@@ -37,6 +39,9 @@ const reducer = (state = initialState, action) => {
     case ADD_PLANT: {
       const newPlantArr = [...state.plants, action.payload]
       return {...state, plants: newPlantArr}
+    }
+    case LOAD_QANDA: {
+      return {...state, questionsAnswers: action.payload}
     }
     default:
       return state
