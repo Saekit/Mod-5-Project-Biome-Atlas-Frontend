@@ -4,13 +4,15 @@ import {Form, Radio } from 'semantic-ui-react'
 class QuizCard extends Component {
 
   state = {
-    answers: []
+    answers: [],
+    value: ""
   }
 
   handleChange = (e, {value}) => {
     this.setState({
       value
     })
+    this.props.idHandler(this.props.qa.id, value)
   }
 
 
@@ -36,7 +38,6 @@ class QuizCard extends Component {
   }
 
   render(){
-    console.log(this.state.value);
     const { value } = this.state
     let {qa} = this.props
     let answers = this.state.answers.map((ans, idx)=>
@@ -44,6 +45,7 @@ class QuizCard extends Component {
         key={idx}
         control={Radio}
         label={ans}
+        name={qa.id}
         value={ans}
         checked={value === ans}
         onChange={this.handleChange}
