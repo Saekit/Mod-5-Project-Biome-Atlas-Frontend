@@ -82,3 +82,25 @@
 .fa-arrow-right:before, .fa-arrow-left:before {
   color: #222
 }
+.hidden {
+  display: none;
+}
+.show {
+  position: sticky;
+  top: 0;
+  border: 2px dashed rgba(114, 186, 94, 0.35);
+  background: rgba(114, 186, 94, 0.05);
+  width: 100%;
+  text-align: center;
+  padding: 50px;
+  font-size: 20px;
+}
+.quiz-form {
+  background-color: white;
+}
+.quiz-form-red {
+  background-color: red;
+}
+.quiz-form-green {
+  background-color: green;
+}
