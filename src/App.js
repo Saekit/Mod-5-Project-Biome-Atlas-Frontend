@@ -10,9 +10,11 @@ import BiomeContainer from './containers/BiomeContainer'
 import AnimalInfoContainer from './containers/AnimalInfoContainer'
 import PlantInfoContainer from './containers/PlantInfoContainer'
 import FormContainer from './containers/FormContainer'
+import QuizContainer from './containers/QuizContainer'
 import {bindActionCreators} from 'redux'
 import {getPlants} from './actions/plantActions'
 import {getAnimals} from './actions/animalActions'
+import {getQuestionsAnswers} from './actions/quizActions'
 
 
 class App extends Component {
@@ -25,6 +27,7 @@ class App extends Component {
   componentDidMount(){
     this.props.getPlants()
     this.props.getAnimals()
+    this.props.getQuestionsAnswers()
   }
 
 
@@ -37,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar animals={this.props.animals} plants={this.props.plants} changeHandler={this.changeHandler} search={this.state.search}/>
+        <NavBar animals={this.props.animals} plants={this.props.plants} questionsAnswers={this.props.questionsAnswers} changeHandler={this.changeHandler} search={this.state.search}/>
         <Switch>
           <Route
             path="/animals"
@@ -64,6 +67,10 @@ class App extends Component {
             component={FormContainer}
             />
           <Route
+            path="/quiz"
+            render={()=> <QuizContainer questionsAnswers={this.props.questionsAnswers}/>}
+            />
+          <Route
             path="/"
             render={() => <HomeContainer/>}
             />
@@ -77,12 +84,14 @@ function mapStateToProps(state){
     plants: state.plants,
     animals: state.animals,
     chosenBiome: state.chosenBiome,
+    questionsAnswers: state.questionsAnswers
   }
 }
 function mapDispatchToProps(dispatch){
   return {
     getPlants: bindActionCreators(getPlants, dispatch),
-    getAnimals: bindActionCreators(getAnimals, dispatch)
+    getAnimals: bindActionCreators(getAnimals, dispatch),
+    getQuestionsAnswers: bindActionCreators(getQuestionsAnswers, dispatch)
   }
 }
 
