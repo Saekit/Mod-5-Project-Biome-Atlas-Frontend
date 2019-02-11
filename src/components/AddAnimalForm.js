@@ -62,7 +62,7 @@ class AddAnimalForm extends Component {
 
   render(){
     return(
-      <Form className="animal-form" onSubmit={this.submitHandler} >
+      <Form className="forms" onSubmit={this.submitHandler} >
         <h1>Add Animal</h1>
 
         <Form.Field>

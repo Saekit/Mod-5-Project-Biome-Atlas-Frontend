@@ -14,7 +14,7 @@ class AnimalCard extends React.Component {
   render(){
     let animal = this.props.animal
     return(
-      <Item.Group>
+      <Item.Group className="animal-list">
         <Item>
           <Item.Image size='tiny' src={animal.image} />
           <Item.Content verticalAlign='middle'>

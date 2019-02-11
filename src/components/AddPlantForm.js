@@ -59,7 +59,7 @@ class AddPlantForm extends Component {
   render(){
     return(
 
-      <Form className="plant-form" onSubmit={this.submitHandler} >
+      <Form className="forms" onSubmit={this.submitHandler} >
         <h1>Add Plant</h1>
 
         <Form.Field>

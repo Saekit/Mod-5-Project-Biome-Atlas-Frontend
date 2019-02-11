@@ -13,7 +13,7 @@ class PlantCard extends React.Component {
   render(){
     let plant = this.props.plant
     return(
-      <Item.Group>
+      <Item.Group className="animal-list">
         <Item>
           <Item.Image size='tiny' src={plant.image} />
           <Item.Content verticalAlign='middle'>

@@ -6,13 +6,13 @@ class AnimalContainer extends React.Component {
   filteredAnimal = () => {
     let filteredAnimal = this.props.animals.filter(animal =>
         animal.species.toLowerCase().includes(this.props.search.toLowerCase())
-      ).map(animal => <AnimalCard key={animal.id} animal={animal} />)
+      ).map(animal => <AnimalCard className="animal-list" key={animal.id} animal={animal} />)
       return filteredAnimal
   }
 
   animal = () => {
     let animal = this.props.animals.map(animal => (
-      <AnimalCard key={animal.id} animal={animal} />
+      <AnimalCard className="animal-list" key={animal.id} animal={animal} />
     ))
     return animal
   }
