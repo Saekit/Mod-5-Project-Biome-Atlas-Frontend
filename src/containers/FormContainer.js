@@ -6,7 +6,7 @@ import { Divider, Grid, Segment } from 'semantic-ui-react'
 class FormContainer extends Component {
   render(){
     return(
-      <Segment>
+      <Segment className="forms">
         <Grid columns={2} relaxed='very' stackable>
            <Grid.Column>
             <AddAnimalForm />

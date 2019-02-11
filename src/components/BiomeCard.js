@@ -39,7 +39,7 @@ class BiomeCard extends React.Component {
     let biome = this.props.biome
     return(
       <Segment>
-         <Image src={biome.image} size='huge' centered />
+         <Image src={biome.image} size='huge' className="profile-image" centered />
 
       <Accordion fluid styled>
         <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>

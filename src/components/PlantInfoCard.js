@@ -16,7 +16,7 @@ class PlantInfoCard extends React.Component {
     let {plant} = this.props
     return(
       <Segment>
-         <Image src={plant.image} size='huge' centered />
+         <Image src={plant.image} size='huge' className="profile-image" centered />
 
       <Accordion fluid styled>
         <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>

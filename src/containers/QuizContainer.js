@@ -38,10 +38,10 @@ class QuizContainer extends Component{
     const {questionsAnswers} = this.props
     // console.log(this.state.correct);
     return(
-      <div className='f jcc aic site'>
+      <div className='f jcc aic site quiz-body'>
         <div>
           <h1>Animal Quiz</h1>
-          <Strider activeIndex='0' transitionSpeed={300}>
+          <Strider activeIndex='0' transitionSpeed={300} >
             <Step>
               {({ next, goTo, active, hiding, activeIndex }) => (
                 <div className={cx('step_wrapper', {

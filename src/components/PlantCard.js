@@ -12,14 +12,15 @@ class PlantCard extends React.Component {
 
   render(){
     let plant = this.props.plant
+    let noSciName = plant.species.replace(/ *\([^)]*\) */g, "")
     return(
-      <Item.Group className="animal-list">
+      <Item.Group className="border">
         <Item>
-          <Item.Image size='tiny' src={plant.image} />
+          <img className="list-image" src={plant.image} />
           <Item.Content verticalAlign='middle'>
             <Item.Header as='a'>
               <Link to="/plantinfo">
-                <p onClick={this.handleClick}>{plant.species}</p>
+                <p className="list-color" onClick={this.handleClick}>{noSciName}</p>
               </Link>
             </Item.Header>
           </Item.Content>

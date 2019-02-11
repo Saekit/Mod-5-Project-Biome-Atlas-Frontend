@@ -17,7 +17,7 @@ class AnimalInfoCard extends React.Component {
     return(
 
       <Segment>
-         <Image src={animal.image} size='huge' centered />
+         <Image src={animal.image} size='huge' centered className="profile-image"/>
 
       <Accordion fluid styled>
         <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>

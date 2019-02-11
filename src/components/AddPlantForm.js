@@ -60,7 +60,8 @@ class AddPlantForm extends Component {
     return(
 
       <Form className="forms" onSubmit={this.submitHandler} >
-        <h1>Add Plant</h1>
+        <h1 className="form-header">Add Plant</h1>
+        <hr />
 
         <Form.Field>
           <Form.Select name="biome_id" fluid label='Biome' options={options} placeholder='Biome' onChange={(e, data) => this.biomeChangeHandler(e, data)} />
