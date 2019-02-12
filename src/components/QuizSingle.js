@@ -46,14 +46,6 @@ class QuizSingle extends Component {
     }, 100)
   }
 
-  //
-  // componentDidMount(){
-  //   this.setState({
-  //     choices: this.shuffle([...this.props.item.choices])
-  //   })
-  //   console.log(this.props.item.choices);
-  // }
-
   render(){
     const { selected, choice, hiding, answerShow } = this.state
     //number is activeIndex, item is questionAnswer[activeIndex]
