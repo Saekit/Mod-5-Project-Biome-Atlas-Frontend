@@ -5,7 +5,7 @@ import {getBiomes} from '../actions/biomeActions'
 import HomeCard from '../components/HomeCard';
 import RightArrow from '../components/RightArrow'
 import LeftArrow from '../components/LeftArrow'
-import { Container, Header } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
 class HomeContainer extends React.Component {
 
@@ -50,31 +50,33 @@ class HomeContainer extends React.Component {
   render(){
 
     return(
-      <Container fluid>
-        <Header as='h2' textAlign='center'>Welcome to Biome Atlas</Header>
-      <div className="slider">
+      <div>
+        <h1 className="home-header">Welcome to Biome Atlas</h1>
+        <Container fluid>
+          <div className="slider">
 
-        <div className="slider-wrapper"
-          style={{
-            transform: `translateX(${this.state.translateValue}px)`,
-            transition: 'transform ease-out 0.45s'
-          }}>
-            {
-              this.props.biomes.map((image, i) => (
-                <HomeCard key={i} biome={image} />
-              ))
-            }
-        </div>
+            <div className="slider-wrapper"
+              style={{
+                transform: `translateX(${this.state.translateValue}px)`,
+                transition: 'transform ease-out 0.45s'
+              }}>
+                {
+                  this.props.biomes.map((image, i) => (
+                    <HomeCard key={i} biome={image} />
+                  ))
+                }
+            </div>
 
-        <LeftArrow
-         goToPrevSlide={this.goToPrevSlide}
-        />
+            <LeftArrow
+             goToPrevSlide={this.goToPrevSlide}
+            />
 
-        <RightArrow
-         goToNextSlide={this.goToNextSlide}
-        />
+            <RightArrow
+             goToNextSlide={this.goToNextSlide}
+            />
+          </div>
+        </Container>
       </div>
-      </Container>
     )
   }
 }

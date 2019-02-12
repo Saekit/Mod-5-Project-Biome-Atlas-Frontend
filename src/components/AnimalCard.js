@@ -15,17 +15,17 @@ class AnimalCard extends React.Component {
     let animal = this.props.animal
     let noSciName = animal.species.replace(/ *\([^)]*\) */g, "")
     return(
-      <Item.Group className="border">
+      <Item.Group className="border" onClick={this.handleClick}>
+      <Link to="/animalinfo">
         <Item>
-          <img className="list-image" src={animal.image} /><br />
+          <img className="list-image" src={animal.image} alt="" />
           <Item.Content verticalAlign='middle'>
             <Item.Header as='a'>
-              <Link to="/animalinfo">
-                <p className="list-color" onClick={this.handleClick}>{noSciName}</p>
-              </Link>
+                <p className="list-color" >{noSciName}</p>
             </Item.Header>
           </Item.Content>
         </Item>
+        </Link>
       </Item.Group>
     )
   }

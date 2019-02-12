@@ -24,7 +24,7 @@ class AddAnimalForm extends Component {
     location: "",
     other_info: "",
     image: "",
-    endangered: false,
+    endangered: "",
     biome_id: ""
   }
 
@@ -55,7 +55,7 @@ class AddAnimalForm extends Component {
       location: "",
       other_info: "",
       image: "",
-      endangered: false,
+      endangered: "",
       biome_id: ""
     })
   }

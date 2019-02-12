@@ -43,7 +43,7 @@ class QuizSingle extends Component {
       } else {
         return this.props.next()
       }
-    }, 10)
+    }, 100)
   }
 
   //
@@ -58,7 +58,7 @@ class QuizSingle extends Component {
     const { selected, choice, hiding, answerShow } = this.state
     //number is activeIndex, item is questionAnswer[activeIndex]
     const { item, number } = this.props
-    const { question, choices, fact, image } = item
+    const { question, fact, image } = item
     // console.log(this.state.choices);
 
     return (
@@ -66,7 +66,7 @@ class QuizSingle extends Component {
       <div className='quiz__container container--xl mha'>
         {(choice && !hiding) ? (
           <div className='px2 quiz__material anwser container--q mha'>
-          <span className='cw quiz__material_qstep'>Question {number} of 5</span>
+          <span className='cw quiz__material_qstep'>Question {number} of 8</span>
           <div className={cx('quiz__material_answer', {
               'active': choice && answerShow
             })}>
@@ -79,7 +79,7 @@ class QuizSingle extends Component {
           </div>
         ) : (
           <div className={cx('px2 quiz__material question container--q mha')}>
-            <span className='cw quiz__material_qstep'>Question {number} of 5</span>
+            <span className='cw quiz__material_qstep'>Question {number} of 8</span>
             <h4 className={cx('cw quiz__material_question', { 'hiding': hiding })}>
               <img className="question-mark" src="/images/question-mark.png" alt="" /><br />
             {question}
@@ -89,7 +89,7 @@ class QuizSingle extends Component {
         <div className='quiz__selections'>
           <div className='quiz__selections_nest'>
             <div className={cx('px1 f jcc aic mha')}>
-            {this.props.shuffled.map((singleChoice) => (
+            {this.props.choices.map((singleChoice) => (
               <SelectableAnswer
                 key={singleChoice.id}
                 topSelected={selected}
@@ -105,7 +105,7 @@ class QuizSingle extends Component {
                   'visible': choice && answerShow
                 })}>
                   <Button classes={`f jcb cw`} clickHandle={() => this.handleNext()}>
-                    {number === 5 ? `Calculate Score` : `Next Question`}
+                    {number === 8 ? `Calculate Score` : `Next Question`}
                   </Button>
                 </div>
               )}

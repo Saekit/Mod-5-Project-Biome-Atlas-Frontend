@@ -16,7 +16,7 @@ class PlantCard extends React.Component {
     return(
       <Item.Group className="border">
         <Item>
-          <img className="list-image" src={plant.image} />
+          <img className="list-image" src={plant.image} alt="" />
           <Item.Content verticalAlign='middle'>
             <Item.Header as='a'>
               <Link to="/plantinfo">

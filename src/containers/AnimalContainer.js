@@ -1,6 +1,5 @@
 import React from "react";
 import AnimalCard from "../components/AnimalCard";
-import { Container, Header } from 'semantic-ui-react'
 
 class AnimalContainer extends React.Component {
 

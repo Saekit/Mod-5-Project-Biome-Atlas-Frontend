@@ -37,7 +37,26 @@ class App extends Component {
       })
     }
 
+    shuffle = (array) => {
+      let currentIndex = array.length, tempVal, randomIndex
+      while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex)
+        currentIndex -= 1
+
+        tempVal = array[currentIndex]
+        array[currentIndex] = array[randomIndex]
+        array[randomIndex] = tempVal
+      }
+      return array
+    }
+
+    shuffledChoices = () => {
+      let choices = this.props.questionsAnswers.map(qa => this.shuffle(qa.choices))
+      return choices
+    }
+
   render() {
+    // console.log(this.shuffledChoices());
     return (
       <div className="App">
         <NavBar animals={this.props.animals} plants={this.props.plants} questionsAnswers={this.props.questionsAnswers} changeHandler={this.changeHandler} search={this.state.search}/>
@@ -68,7 +87,9 @@ class App extends Component {
             />
           <Route
             path="/quiz"
-            render={()=> <QuizContainer questionsAnswers={this.props.questionsAnswers}/>}
+            render={()=> <QuizContainer questionsAnswers={this.props.questionsAnswers}
+            choices={this.shuffledChoices()}
+            />}
             />
           <Route
             path="/"
