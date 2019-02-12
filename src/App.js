@@ -15,7 +15,35 @@ import {bindActionCreators} from 'redux'
 import {getPlants} from './actions/plantActions'
 import {getAnimals} from './actions/animalActions'
 import {getQuestionsAnswers} from './actions/quizActions'
+import styled from "styled-components";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+const Wrapper = styled.div`
+    .fade-enter {
+        opacity: 0.01;
+    }
+    .fade-enter.fade-enter-active {
+        opacity: 1;
+        transition: opacity 300ms ease-in;
+    }
+    .fade-exit {
+        opacity: 1;
+    }
+
+    .fade-exit.fade-exit-active {
+        opacity: 0.01;
+        transition: opacity 300ms ease-in;
+    }
+    div.transition-group {
+           position: relative;
+      }
+    section.route-section {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+`;
 
 class App extends Component {
 
@@ -56,50 +84,60 @@ class App extends Component {
     }
 
   render() {
-    // console.log(this.shuffledChoices());
     return (
-      <div className="App">
+      <Wrapper className="App">
         <NavBar animals={this.props.animals} plants={this.props.plants} questionsAnswers={this.props.questionsAnswers} changeHandler={this.changeHandler} search={this.state.search}/>
-        <Switch>
-          <Route
-            path="/animals"
-            render={() => <AnimalContainer animals={this.props.animals} search={this.state.search}/>}
-            />
-          <Route
-            path="/plants"
-            render={() => <PlantContainer plants={this.props.plants} search={this.state.search}/>}
-            />
-          <Route
-            path="/biome"
-            render={() => <BiomeContainer search={this.state.search}/>}
-            />
-          <Route
-            path="/animalinfo"
-            component={AnimalInfoContainer}
-            />
-          <Route
-            path="/plantinfo"
-            component={PlantInfoContainer}
-            />
-          <Route
-            path="/form"
-            component={FormContainer}
-            />
-          <Route
-            path="/quiz"
-            render={()=> <QuizContainer questionsAnswers={this.props.questionsAnswers}
-            choices={this.shuffledChoices()}
-            />}
-            />
-          <Route
-            path="/"
-            render={() => <HomeContainer/>}
-            />
-        </Switch>
-      </div>
+        <TransitionGroup className="transition-group">
+          <CSSTransition
+            key={this.props.location.key}
+            timeout={{ enter: 300, exit: 300 }}
+            classNames={'fade'}
+          >
+            <section className="route-section">
+              <Switch location={this.props.location}>
+                <Route
+                  path="/animals"
+                  render={() => <AnimalContainer animals={this.props.animals} search={this.state.search}/>}
+                  />
+                <Route
+                  path="/plants"
+                  render={() => <PlantContainer plants={this.props.plants} search={this.state.search}/>}
+                  />
+                <Route
+                  path="/biome"
+                  render={() => <BiomeContainer search={this.state.search}/>}
+                  />
+                <Route
+                  path="/animalinfo"
+                  component={AnimalInfoContainer}
+                  />
+                <Route
+                  path="/plantinfo"
+                  component={PlantInfoContainer}
+                  />
+                <Route
+                  path="/form"
+                  component={FormContainer}
+                  />
+                <Route
+                  path="/quiz"
+                  render={()=> <QuizContainer questionsAnswers={this.props.questionsAnswers}
+                  choices={this.shuffledChoices()}
+                  />}
+                  />
+                <Route
+                  path="/"
+                  render={() => <HomeContainer/>}
+                  />
+              </Switch>
+            </section>
+          </CSSTransition>
+        </TransitionGroup>
+      </Wrapper>
     );
   }
 }
+
 function mapStateToProps(state){
   return {
     plants: state.plants,
