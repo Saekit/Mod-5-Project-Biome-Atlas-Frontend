@@ -11,8 +11,7 @@ export const getAnimals = () => {
           type: LOAD_ANIMALS,
           payload: animals
         })
-      })
-      .catch(console.error)
+      }).catch(console.error)
   }
 }
 export const changeAnimal = (animal) => {
@@ -41,14 +40,12 @@ export const addAnimal = (animal) => {
         endangered: animal.endangered,
         biome_id: animal.biome_id
       })
-    })
-      .then(res=>res.json())
+    }).then(res=>res.json())
       .then(animal => {
         dispatch({
           type: ADD_ANIMAL,
           payload: animal
         })
-      })
-      .catch(console.error)
+      }).catch(console.error)
   }
 }

@@ -15,6 +15,7 @@ import {bindActionCreators} from 'redux'
 import {getPlants} from './actions/plantActions'
 import {getAnimals} from './actions/animalActions'
 import {getQuestionsAnswers} from './actions/quizActions'
+import {getComments} from './actions/commentActions'
 import styled from "styled-components";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -56,6 +57,7 @@ class App extends Component {
     this.props.getPlants()
     this.props.getAnimals()
     this.props.getQuestionsAnswers()
+    this.props.getComments()
   }
 
 
@@ -109,11 +111,11 @@ class App extends Component {
                   />
                 <Route
                   path="/animalinfo"
-                  component={AnimalInfoContainer}
+                  render={() => <AnimalInfoContainer comments={this.props.comments}/>}
                   />
                 <Route
                   path="/plantinfo"
-                  component={PlantInfoContainer}
+                  render={() => <PlantInfoContainer comments={this.props.comments}/>}
                   />
                 <Route
                   path="/form"
@@ -143,14 +145,16 @@ function mapStateToProps(state){
     plants: state.plants,
     animals: state.animals,
     chosenBiome: state.chosenBiome,
-    questionsAnswers: state.questionsAnswers
+    questionsAnswers: state.questionsAnswers,
+    comments: state.comments
   }
 }
 function mapDispatchToProps(dispatch){
   return {
     getPlants: bindActionCreators(getPlants, dispatch),
     getAnimals: bindActionCreators(getAnimals, dispatch),
-    getQuestionsAnswers: bindActionCreators(getQuestionsAnswers, dispatch)
+    getQuestionsAnswers: bindActionCreators(getQuestionsAnswers, dispatch),
+    getComments: bindActionCreators(getComments, dispatch)
   }
 }
 
