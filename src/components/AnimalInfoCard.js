@@ -98,7 +98,7 @@ class AnimalInfoCard extends React.Component {
         </Accordion.Content>
       </Accordion>
       <br /><hr /><br />
-      <Comments animal={animal}/>
+      <Comments animal={animal} parent="animal"/>
       </Segment>
     )
   }

@@ -2,7 +2,7 @@ import {LOAD_ANIMALS, CHANGE_ANIMAL, ADD_ANIMAL} from '../actions/animalActions'
 import {LOAD_PLANTS, CHANGE_PLANT, ADD_PLANT} from '../actions/plantActions'
 import {LOAD_BIOMES, CHANGE_BIOME} from '../actions/biomeActions'
 import {LOAD_QANDA} from '../actions/quizActions'
-import {LOAD_COMMENTS, ADD_COMMENT_ANIMAL} from '../actions/commentActions'
+import {LOAD_COMMENTS, ADD_COMMENT_ANIMAL, ADD_COMMENT_PLANT} from '../actions/commentActions'
 
 const initialState = {
   animals: [],
@@ -49,6 +49,10 @@ const reducer = (state = initialState, action) => {
       return {...state, comments: action.payload}
     }
     case ADD_COMMENT_ANIMAL: {
+      const newCommentArr = [...state.comments, action.payload]
+      return {...state, comments: newCommentArr}
+    }
+    case ADD_COMMENT_PLANT: {
       const newCommentArr = [...state.comments, action.payload]
       return {...state, comments: newCommentArr}
     }

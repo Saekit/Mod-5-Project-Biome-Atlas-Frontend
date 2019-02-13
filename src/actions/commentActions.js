@@ -1,5 +1,6 @@
 export const LOAD_COMMENTS = 'LOAD_COMMENTS';
 export const ADD_COMMENT_ANIMAL = 'ADD_COMMENT_ANIMAL';
+export const ADD_COMMENT_PLANT ='ADD_COMMENT_PLANT'
 
 export const getComments = () => {
   return dispatch => {
@@ -37,6 +38,36 @@ export const addCommentAnimal = (comment) => {
       .then(comment=>{
         dispatch({
           type: ADD_COMMENT_ANIMAL,
+          payload: comment
+        })
+      }).catch(console.error)
+  }
+}
+
+let plantPics = ['./images/profile-heliconia.jpg', './images/profile-mapletree.jpg', './images/profile-orchid.jpg']
+
+let randomPlant = plantPics[Math.floor(Math.random() * plantPics.length)]
+
+
+export const addCommentPlant = (comment) => {
+  return dispatch => {
+    return fetch(`http://localhost:3001/api/v1/plants/${comment.plant_id}/comments`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        name: comment.name,
+        comment: comment.comment,
+        animal_id: null,
+        plant_id: comment.plant_id,
+        animal_img: randomPlant
+      })
+    }).then(res=>res.json())
+      .then(comment=>{
+        dispatch({
+          type: ADD_COMMENT_PLANT,
           payload: comment
         })
       }).catch(console.error)

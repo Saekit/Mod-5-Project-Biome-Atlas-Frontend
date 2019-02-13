@@ -51,28 +51,27 @@ class QuizSingle extends Component {
     //number is activeIndex, item is questionAnswer[activeIndex]
     const { item, number } = this.props
     const { question, fact, image } = item
-    // console.log(this.state.choices);
 
     return (
       <div className='quiz__main'>
       <div className='quiz__container container--xl mha'>
         {(choice && !hiding) ? (
           <div className='px2 quiz__material anwser container--q mha'>
-          <span className='cw quiz__material_qstep'>Question {number} of 8</span>
+          <span className='cw quiz__material_qstep quiz-nums'>Question {number} of 8</span>
           <div className={cx('quiz__material_answer', {
               'active': choice && answerShow
             })}>
             <div>
-                <h3 className='cw'>{selected ? `Correct!` : `Nope`}</h3>
+                <h3 className='cw quiz-ans'>{selected ? `Correct!` : `Nope`}</h3>
                 <img className="question-image" src={image} alt="" />
-                <div className='cw' dangerouslySetInnerHTML={{__html: fact}} />
+                <div className='cw quiz-fact' dangerouslySetInnerHTML={{__html: fact}} />
               </div>
             </div>
           </div>
         ) : (
           <div className={cx('px2 quiz__material question container--q mha')}>
-            <span className='cw quiz__material_qstep'>Question {number} of 8</span>
-            <h4 className={cx('cw quiz__material_question', { 'hiding': hiding })}>
+            <span className='cw quiz__material_qstep quiz-nums'>Question {number} of 8</span>
+            <h4 className={cx('cw quiz__material_question quiz-questions', { 'hiding': hiding })}>
               <img className="question-mark" src="/images/question-mark.png" alt="" /><br />
             {question}
             </h4>

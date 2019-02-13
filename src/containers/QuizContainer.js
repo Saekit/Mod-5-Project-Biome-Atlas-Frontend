@@ -8,7 +8,7 @@ import QuizEnd from '../components/QuizEnd'
 class QuizContainer extends Component{
 
   state = {
-    correct: 0 //total right answers start at 0
+    correct: 0
   }
 
   pushAnswer = (next) => {
@@ -23,7 +23,7 @@ class QuizContainer extends Component{
     return(
       <div className='f jcc aic site quiz-body'>
         <div>
-          <h1>Animal Quiz</h1>
+          <h1 className="quiz-head">Animal Quiz</h1>
           <Strider activeIndex='0' transitionSpeed={300} >
             <Step>
               {({ next, goTo, active, hiding, activeIndex }) => (

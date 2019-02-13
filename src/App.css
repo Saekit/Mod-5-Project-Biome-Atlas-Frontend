@@ -257,6 +257,8 @@ a:not(:hover) {
   display: inline-block;
   cursor: pointer;
   margin-top: 20px;
+  font-size: 20px;
+  font-family: 'Fahkwang', sans-serif;
 }
 .button:hover {
   background-color: black;
@@ -264,13 +266,20 @@ a:not(:hover) {
 }
 .container--q {
   max-width: 400px;
+  font-family: 'Fahkwang', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
 }
 .quiz__options > div {
   transition: all 0.25s;
   padding: 1rem 1.3rem;
   cursor: pointer;
-  border: 2px solid gray;
+  border: 2px solid black;
   margin: 4px;
+  color: #05668D;
+  font-size: 20px;
+  font-family: 'Fahkwang', sans-serif;
+  font-weight: 900;
 }
 .quiz__options > div:hover {
   background-color: gray;
@@ -287,7 +296,7 @@ a:not(:hover) {
   border-color: red;
 }
 .quiz__options > div.cw {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .question-image{
   width: 300px;
@@ -302,6 +311,36 @@ a:not(:hover) {
   background-repeat: no-repeat;
   background-size: 100%;
 }
+.quiz-head {
+  font-size: 45px;
+  font-family: 'Fahkwang', sans-serif;
+}
+.quiz-start {
+  font-size: 20px;
+  font-family: 'Fahkwang', sans-serif;
+}
+.quiz-questions {
+  font-size: 20px;
+  font-family: 'Fahkwang', sans-serif;
+}
+.quiz-nums {
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+.quiz-fact {
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+.quiz-ans {
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+.quiz-score {
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+}
+
+
 .fade-enter {
     opacity: 0.01;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Accordion, Icon, Segment, Image } from 'semantic-ui-react'
+import { Accordion, Icon, Segment, Image} from 'semantic-ui-react'
+import Comments from './Comments'
 
 class PlantInfoCard extends React.Component {
   state = { activeIndex: 0 }
@@ -79,7 +80,8 @@ class PlantInfoCard extends React.Component {
           </p>
         </Accordion.Content>
       </Accordion>
-
+      <br /><hr /><br />
+      <Comments plant={plant} parent="plant"/>
       </Segment>
     )
   }
