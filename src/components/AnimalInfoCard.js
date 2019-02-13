@@ -1,8 +1,11 @@
 import React from 'react';
 import { Accordion, Icon, Segment, Image } from 'semantic-ui-react'
+import Comments from './Comments'
 
 class AnimalInfoCard extends React.Component {
-  state = { activeIndex: 0 }
+  state = {
+    activeIndex: 0
+  }
 
     handleClick = (e, titleProps) => {
       const { index } = titleProps
@@ -11,13 +14,18 @@ class AnimalInfoCard extends React.Component {
 
       this.setState({ activeIndex: newIndex })
     }
+
+
+
+
   render(){
+
     const { activeIndex } = this.state
     let {animal} = this.props
     return(
 
       <Segment>
-         <Image src={animal.image} size='huge' centered className="profile-image"/>
+         <Image src={animal.image} size='huge' centered className="profile-image"/><br />
 
       <Accordion fluid styled>
         <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
@@ -89,6 +97,8 @@ class AnimalInfoCard extends React.Component {
           </p>
         </Accordion.Content>
       </Accordion>
+      <br /><hr /><br />
+      <Comments animal={animal}/>
       </Segment>
     )
   }

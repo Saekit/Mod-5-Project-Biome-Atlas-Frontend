@@ -79,6 +79,7 @@ class PlantInfoCard extends React.Component {
           </p>
         </Accordion.Content>
       </Accordion>
+
       </Segment>
     )
   }
