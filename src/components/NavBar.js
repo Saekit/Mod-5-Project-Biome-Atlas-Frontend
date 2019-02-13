@@ -39,12 +39,14 @@ class NavBar extends React.Component {
           active={activeItem === 'quiz'}
           onClick={this.handleItemClick}
         /></Link>
-        {window.location.href === 'http://localhost:3000/' || window.location.href === 'http://localhost:3000/form' || window.location.href === 'http://localhost:3000/quiz' ? (null):(
+        {window.location.href === 'http://localhost:3000/animals' || window.location.href === 'http://localhost:3000/plants' ? (
           <Menu.Menu position='right'>
-            <Menu.Item>
-              <Input icon='search' placeholder='Search...' name="search" value={this.props.search} onChange={this.props.changeHandler}/>
-            </Menu.Item>
-          </Menu.Menu>)}
+          <Menu.Item>
+            <Input icon='search' placeholder='Search...' name="search" value={this.props.search} onChange={this.props.changeHandler}/>
+          </Menu.Item>
+        </Menu.Menu>
+      ):
+        (null)}
       </Menu>
       </div>
     )
