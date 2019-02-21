@@ -13,9 +13,10 @@ class AnimalCard extends React.Component {
 
   render(){
     let animal = this.props.animal
+    let border = animal.endangered ? ("border-endangered") : ("border")
     let noSciName = animal.species.replace(/ *\([^)]*\) */g, "")
     return(
-      <Item.Group className="border" onClick={this.handleClick}>
+      <Item.Group className={border} onClick={this.handleClick}>
       <Link to="/animalinfo">
         <Item>
           <img className="list-image" src={animal.image} alt="" />

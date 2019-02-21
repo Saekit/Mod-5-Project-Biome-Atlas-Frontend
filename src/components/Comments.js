@@ -147,7 +147,6 @@ class Comments extends Component {
   }
 
   render(){
-    console.log(this.state);
     return(
       <div>
       {this.showComments()}

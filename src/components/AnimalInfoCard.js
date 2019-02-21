@@ -15,17 +15,17 @@ class AnimalInfoCard extends React.Component {
       this.setState({ activeIndex: newIndex })
     }
 
-
-
-
   render(){
-
     const { activeIndex } = this.state
     let {animal} = this.props
+    let profImg = animal.endangered ? ("profile-image-en") : ("profile-image")
+
+    let endangered = animal.endangered ? ("I am endagered!") : ("I'm not endangered")
+
     return(
 
       <Segment>
-         <Image src={animal.image} size='huge' centered className="profile-image"/><br />
+         <Image src={animal.image} size='huge' centered className={profImg}/><br />
 
       <Accordion fluid styled>
         <Accordion.Title active={activeIndex === 0} index={0} onClick={this.handleClick}>
@@ -40,58 +40,68 @@ class AnimalInfoCard extends React.Component {
 
         <Accordion.Title active={activeIndex === 1} index={1} onClick={this.handleClick}>
           <Icon name='dropdown' />
-          Size
+          Endangered
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 1}>
           <p>
-            {animal.size}
+            {endangered}
           </p>
         </Accordion.Content>
 
         <Accordion.Title active={activeIndex === 2} index={2} onClick={this.handleClick}>
           <Icon name='dropdown' />
-          Lifespan
+          Size
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 2}>
           <p>
-            {animal.lifespan}
+            {animal.size}
           </p>
         </Accordion.Content>
 
         <Accordion.Title active={activeIndex === 3} index={3} onClick={this.handleClick}>
           <Icon name='dropdown' />
-          Location
+          Lifespan
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 3}>
           <p>
-            {animal.location}
+            {animal.lifespan}
           </p>
         </Accordion.Content>
 
         <Accordion.Title active={activeIndex === 4} index={4} onClick={this.handleClick}>
           <Icon name='dropdown' />
-          Prey
+          Location
         </Accordion.Title>
         <Accordion.Content active={activeIndex === 4}>
+          <p>
+            {animal.location}
+          </p>
+        </Accordion.Content>
+
+        <Accordion.Title active={activeIndex === 5} index={5} onClick={this.handleClick}>
+          <Icon name='dropdown' />
+          Prey
+        </Accordion.Title>
+        <Accordion.Content active={activeIndex === 5}>
           <p>
             {animal.prey}
           </p>
         </Accordion.Content>
-        <Accordion.Title active={activeIndex === 5} index={5} onClick={this.handleClick}>
+        <Accordion.Title active={activeIndex === 6} index={6} onClick={this.handleClick}>
           <Icon name='dropdown' />
           Predators
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 5}>
+        <Accordion.Content active={activeIndex === 6}>
           <p>
             {animal.predators}
           </p>
         </Accordion.Content>
 
-        <Accordion.Title active={activeIndex === 6} index={6} onClick={this.handleClick}>
+        <Accordion.Title active={activeIndex === 7} index={7} onClick={this.handleClick}>
           <Icon name='dropdown' />
           Interesting Fact
         </Accordion.Title>
-        <Accordion.Content active={activeIndex === 6}>
+        <Accordion.Content active={activeIndex === 7}>
           <p>
             {animal.other_info}
           </p>

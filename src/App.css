@@ -159,8 +159,24 @@ body {
   box-shadow: 0 6px #05668D;
 }
 
+.border-endangered{
+  border: 2px solid #E40A0A;
+  border-radius: 25px;
+  padding: 20px;
+  width: 33%;
+  height: 150px;
+  background: url('/images/Bgs/transblue.jpg');
+  margin: auto;
+  opacity: 0.9;
+  box-shadow: 0 6px #B32222;
+}
+
 .border:active {
-  box-shadow: 0 5px #05668D;
+  box-shadow: 0 2px #05668D;
+  transform: translateY(4px);
+}
+.border-endangered:active {
+  box-shadow: 0 2px #B32222;
   transform: translateY(4px);
 }
 .flex{
@@ -214,9 +230,15 @@ body {
 }
 
 .profile-image {
-  border: 2px solid gray;
+  border: 2px solid #05668D;
   border-radius: 25px;
 }
+.profile-image-en {
+  border: 2px solid #E40A0A;
+  border-radius: 25px;
+}
+
+
 a {
   color: #0ebeff;
 }
