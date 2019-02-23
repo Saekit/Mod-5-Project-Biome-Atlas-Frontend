@@ -4,7 +4,7 @@ export const ADD_COMMENT_PLANT ='ADD_COMMENT_PLANT'
 
 export const getComments = () => {
   return dispatch => {
-    return fetch('http://localhost:3001/api/v1/comments')
+    return fetch('https://biome-atlas-backend.herokuapp.com/api/v1/comments')
     .then(res=>res.json())
     .then(comments => {
       dispatch({
@@ -21,7 +21,7 @@ let randomAnimal = animalPics[Math.floor(Math.random() * animalPics.length)]
 
 export const addCommentAnimal = (comment) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/animals/${comment.animal_id}/comments`, {
+    return fetch(`https://biome-atlas-backend.herokuapp.com/api/v1/animals/${comment.animal_id}/comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ let randomPlant = plantPics[Math.floor(Math.random() * plantPics.length)]
 
 export const addCommentPlant = (comment) => {
   return dispatch => {
-    return fetch(`http://localhost:3001/api/v1/plants/${comment.plant_id}/comments`, {
+    return fetch(`https://biome-atlas-backend.herokuapp.com/api/v1/plants/${comment.plant_id}/comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
