@@ -29,6 +29,7 @@ class NavBar extends React.Component {
           active={activeItem === 'Plants'}
           onClick={this.handleItemClick}
         /></Link>
+
         <Link to={'/form'}><Menu.Item
           name='Add Animal or Plant'
           active={activeItem === 'Add Animal or Plant'}
@@ -39,6 +40,12 @@ class NavBar extends React.Component {
           active={activeItem === 'quiz'}
           onClick={this.handleItemClick}
         /></Link>
+        <Link to={'/about'}><Menu.Item
+          name='About'
+          active={activeItem === 'About'}
+          onClick={this.handleItemClick}
+        />
+        </Link>
         {window.location.href === 'http://localhost:3000/animals' || window.location.href === 'http://localhost:3000/plants' ? (
           <Menu.Menu position='right'>
           <Menu.Item>

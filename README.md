@@ -1,6 +1,7 @@
 Welcome to Biome Atlas, a single page web application aimed at school children to teach them all about Biomes and the animals and plants that live within them!
 This is the frontend part of my project, to have a working project please also fork the backend located here: https://github.com/Saekit/Mod-5-Project-Biome-Atlas-API
 
+
 Instructions for use:
 
 Fork and clone this repo.

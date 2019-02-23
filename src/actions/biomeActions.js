@@ -3,7 +3,7 @@ export const CHANGE_BIOME = 'CHANGE_BIOME'
 
 export const getBiomes = () => {
   return (dispatch) => {
-    return fetch('https://biome-atlas-backend.herokuapp.com/api/v1/biomes')
+    return fetch('http://localhost:3001/api/v1/biomes')
       .then(res=>res.json())
       .then(biomes => {
         dispatch({

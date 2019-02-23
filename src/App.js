@@ -11,6 +11,7 @@ import AnimalInfoContainer from './containers/AnimalInfoContainer'
 import PlantInfoContainer from './containers/PlantInfoContainer'
 import FormContainer from './containers/FormContainer'
 import QuizContainer from './containers/QuizContainer'
+import AboutContainer from './containers/AboutContainer'
 import {bindActionCreators} from 'redux'
 import {getPlants} from './actions/plantActions'
 import {getAnimals} from './actions/animalActions'
@@ -116,6 +117,10 @@ class App extends Component {
                 <Route
                   path="/plantinfo"
                   render={() => <PlantInfoContainer comments={this.props.comments}/>}
+                  />
+                <Route
+                  path="/about"
+                  component={AboutContainer}
                   />
                 <Route
                   path="/form"
