@@ -46,7 +46,7 @@ class NavBar extends React.Component {
           onClick={this.handleItemClick}
         />
         </Link>
-        {window.location.href === 'http://localhost:3000/animals' || window.location.href === 'http://localhost:3000/plants' ? (
+        {window.location.href === 'https://biome-atlas.herokuapp.com/animals' || window.location.href === 'https://biome-atlas.herokuapp.com/plants' ? (
           <Menu.Menu position='right'>
           <Menu.Item>
             <Input icon='search' placeholder='Search...' name="search" value={this.props.search} onChange={this.props.changeHandler}/>
