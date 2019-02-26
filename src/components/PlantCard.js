@@ -6,9 +6,10 @@ import { Item } from 'semantic-ui-react'
 
 class PlantCard extends React.Component {
 
-    handleClick = () => {
-      this.props.changePlant(this.props.plant)
-    }
+  handleClick = () => {
+    this.props.changeHandler("")
+    this.props.changePlant(this.props.plant)
+  }
 
   render(){
     let plant = this.props.plant

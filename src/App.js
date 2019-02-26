@@ -64,7 +64,7 @@ class App extends Component {
 
     changeHandler = (e, search) => {
       this.setState({
-        search: e.target.value
+        search: e
       })
     }
 
@@ -86,10 +86,12 @@ class App extends Component {
       return choices
     }
 
+
   render() {
     return (
       <Wrapper className="App">
         <NavBar animals={this.props.animals} plants={this.props.plants} questionsAnswers={this.props.questionsAnswers} changeHandler={this.changeHandler} search={this.state.search}/>
+
         <TransitionGroup className="transition-group">
           <CSSTransition
             key={this.props.location.key}
@@ -100,11 +102,11 @@ class App extends Component {
               <Switch location={this.props.location}>
                 <Route
                   path="/animals"
-                  render={() => <AnimalContainer animals={this.props.animals} search={this.state.search}/>}
+                  render={() => <AnimalContainer animals={this.props.animals} search={this.state.search} changeHandler={this.changeHandler}/> }
                   />
                 <Route
                   path="/plants"
-                  render={() => <PlantContainer plants={this.props.plants} search={this.state.search}/>}
+                  render={() => <PlantContainer plants={this.props.plants} search={this.state.search} changeHandler={this.changeHandler}/>}
                   />
                 <Route
                   path="/biome"

@@ -16,13 +16,13 @@ class AnimalContainer extends React.Component {
   filteredAnimal = () => {
     let filteredAnimal = this.props.animals.sort(this.compare).filter(animal =>
         animal.species.toLowerCase().includes(this.props.search.toLowerCase())
-      ).map(animal => <AnimalCard key={animal.id} animal={animal} />)
+      ).map(animal => <AnimalCard key={animal.id} animal={animal} changeHandler={this.props.changeHandler} />)
       return filteredAnimal
   }
 
   animal = () => {
     let animal = this.props.animals.sort(this.compare).map(animal => (
-      <AnimalCard key={animal.id} animal={animal} />
+      <AnimalCard key={animal.id} animal={animal} changeHandler={this.props.changeHandler} />
     ))
     return animal
   }

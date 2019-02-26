@@ -8,6 +8,7 @@ import { Item } from 'semantic-ui-react'
 class AnimalCard extends React.Component {
 
   handleClick = () => {
+    this.props.changeHandler("")
     this.props.changeAnimal(this.props.animal)
   }
 

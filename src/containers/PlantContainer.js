@@ -17,13 +17,13 @@ class PlantContainer extends React.Component {
   filteredPlant = () => {
     let filteredPlant = this.props.plants.sort(this.compare).filter(plant =>
         plant.species.toLowerCase().includes(this.props.search.toLowerCase())
-      ).map(plant => <PlantCard key={plant.id} plant={plant} />)
+      ).map(plant => <PlantCard key={plant.id} plant={plant} changeHandler={this.props.changeHandler} />)
       return filteredPlant
   }
 
   plant = () => {
     let plant = this.props.plants.sort(this.compare).map(plant => (
-      <PlantCard key={plant.id} plant={plant} />
+      <PlantCard key={plant.id} plant={plant} changeHandler={this.props.changeHandler} />
     ))
     return plant
   }
