@@ -88,8 +88,8 @@ class BiomeCard extends React.Component {
         <Button.Or />
         <Button onClick={this.plantHandler} content='Plants in this Biome' />
       </Button.Group>
-      {this.state.animal ? <AnimalContainer animals={this.props.animals} search={this.props.search} /> : null}
-      {this.state.plant ? <PlantContainer plants={this.props.plants} search={this.props.search}/> : null}
+      {this.state.animal ? <AnimalContainer animals={this.props.animals} search={this.props.search} changeHandler={this.props.changeHandler}/> : null}
+      {this.state.plant ? <PlantContainer plants={this.props.plants} search={this.props.search} changeHandler={this.props.changeHandler}/> : null}
       </Segment>
     )
   }

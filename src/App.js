@@ -110,7 +110,7 @@ class App extends Component {
                   />
                 <Route
                   path="/biome"
-                  render={() => <BiomeContainer search={this.state.search}/>}
+                  render={() => <BiomeContainer search={this.state.search} changeHandler={this.changeHandler}/>}
                   />
                 <Route
                   path="/animalinfo"
