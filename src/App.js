@@ -3,6 +3,7 @@ import './App.css';
 import {connect} from 'react-redux'
 import {Route, Switch, withRouter} from 'react-router-dom'
 import NavBar from './components/NavBar';
+// import Footer from './components/Footer';
 import AnimalContainer from './containers/AnimalContainer'
 import PlantContainer from './containers/PlantContainer'
 import HomeContainer from './containers/HomeContainer'
@@ -12,6 +13,7 @@ import PlantInfoContainer from './containers/PlantInfoContainer'
 import FormContainer from './containers/FormContainer'
 import QuizContainer from './containers/QuizContainer'
 import AboutContainer from './containers/AboutContainer'
+
 import {bindActionCreators} from 'redux'
 import {getPlants} from './actions/plantActions'
 import {getAnimals} from './actions/animalActions'

@@ -5,6 +5,10 @@ import Comments from './Comments'
 class PlantInfoCard extends React.Component {
   state = { activeIndex: 0 }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+}
+
     handleClick = (e, titleProps) => {
       const { index } = titleProps
       const { activeIndex } = this.state

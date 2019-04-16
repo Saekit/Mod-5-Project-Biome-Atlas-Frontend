@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -30,6 +31,17 @@
     transform: rotate(360deg);
   }
 } */
+html, body {
+  height: 100%;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-bottom: -142px;
+  position: relative;
+}
+
 .slider {
   position: relative;
   width: 900px;
@@ -181,8 +193,8 @@ body {
 }
 .flex{
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
   align-content: space-around;
@@ -208,6 +220,8 @@ body {
   border-radius: 25px;
   opacity: 1;
 }
+
+
 .forms {
   text-align: left;
   font-family: 'Slabo 27px', serif;
@@ -438,4 +452,68 @@ a:not(:hover) {
                  0 5px 10px rgba(0,0,0,.25),
                  0 10px 10px rgba(0,0,0,.2),
                  0 20px 20px rgba(0,0,0,.15);
+}
+
+.footer {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  bottom: 0;
+  width: 100%;
+  height: 6rem;
+  background-color: linear-gradient(35deg, #ffcccc, #cff);
+}
+
+.App:after {
+  content: "";
+  display: block;
+}
+.footer {
+  display: block;
+  text-align: center;
+  box-shadow: 20px 20px 50px 10px pink inset;
+}
+.footer-icons a {
+  text-decoration: none;
+  padding: 1em;
+  color: rgba(66.7, 49, 22.4, 0.5);
+}
+.footer a:hover {
+  color: #553300;
+}
+.footer p {
+  font-family: 'Alice', serif;
+  display: block;
+  color: rgba(66.7, 49, 22.4, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 600px) {
+
+  .border{
+    width: 100%;
+  }
+
+  .border-endangered{
+    width: 100%;
+  }
+  .quiz-body{
+    background-size: cover;
+  }
+  .f {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .f>* {
+    flex: 200px;
+  }
+
+  .slider {
+    width: 100%;
+  }
 }
