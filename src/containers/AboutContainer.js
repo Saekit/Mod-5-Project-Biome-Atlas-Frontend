@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from 'semantic-ui-react'
 
 const AboutContainer = () => {
   return(
@@ -10,8 +9,6 @@ const AboutContainer = () => {
       <p>Implemented React and Redux to handled over 10 states, created 8 routes, and passed information between over 25 components.</p>
       <p>Designed user interface, slider, and forms with Semantic UI React, custom CSS, and React Transition Group.</p>
       <p>Used react library Strider to create an interactive quiz.</p>
-      <a className="icons" href='https://www.linkedin.com/in/raquel-randall'><Icon size='large' circular link name='linkedin' /></a>
-      <a className="icons" href='https://github.com/Saekit'><Icon size='large' circular link name='github' /></a>
     </div>
   )
 }

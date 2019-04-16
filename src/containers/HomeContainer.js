@@ -7,6 +7,7 @@ import RightArrow from '../components/RightArrow'
 import LeftArrow from '../components/LeftArrow'
 import { Container } from 'semantic-ui-react'
 
+
 class HomeContainer extends React.Component {
 
   componentDidMount(){

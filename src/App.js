@@ -3,7 +3,7 @@ import './App.css';
 import {connect} from 'react-redux'
 import {Route, Switch, withRouter} from 'react-router-dom'
 import NavBar from './components/NavBar';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import AnimalContainer from './containers/AnimalContainer'
 import PlantContainer from './containers/PlantContainer'
 import HomeContainer from './containers/HomeContainer'
@@ -141,9 +141,12 @@ class App extends Component {
                   render={() => <HomeContainer/>}
                   />
               </Switch>
+              <Footer />
             </section>
+
           </CSSTransition>
         </TransitionGroup>
+
       </Wrapper>
     );
   }
