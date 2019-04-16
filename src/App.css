@@ -411,6 +411,7 @@ a:not(:hover) {
 }
 .ui.menu {
   font-size: 16px;
+  width: 100%;
 }
 .ui.form {
   font-size: 18px;
@@ -504,6 +505,9 @@ a:not(:hover) {
   }
   .slider {
     width: 100%;
+  }
+  .commentForm {
+    width: 80%;
   }
 }
 
