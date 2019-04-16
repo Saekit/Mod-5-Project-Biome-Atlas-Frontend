@@ -3,12 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faInstagram, faLinkedin, faGithub, faMedium } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faInstagram, faLinkedin, faGithub, faMedium, faEnvelope);
+library.add(faInstagram, faLinkedin, faGithub, faMedium, faEnvelope, faHome);
 const Footer = () => {
   return(
     <footer className='footer'>
     <div className='footer-icons'>
+
+    <a href='https://raquel-randall.netlify.com/'><FontAwesomeIcon icon={faHome} size="2x" /></a>
 
     <a href='https://www.linkedin.com/in/raquel-randall/'><FontAwesomeIcon icon={faLinkedin} size="2x" /></a>
 
