@@ -7,7 +7,7 @@ class FormContainer extends Component {
   render() {
     return (
       <Segment className="forms">
-        <Responsive as={Segment} minWidth={601}>
+        <Responsive as={Segment} minWidth={775}>
           <Grid columns={2} relaxed="very" stackable>
             <Grid.Column>
               <AddAnimalForm />
@@ -19,7 +19,7 @@ class FormContainer extends Component {
           <Divider vertical>OR</Divider>
         </Responsive>
 
-        <Responsive as={Segment} maxWidth={600}>
+        <Responsive as={Segment} maxWidth={774}>
           <Grid relaxed="very" stackable>
             <Grid.Column>
               <AddAnimalForm />
